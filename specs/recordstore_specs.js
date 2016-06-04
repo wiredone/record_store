@@ -23,9 +23,10 @@ var Record = require('../record');
     record4 = new Record({name:"Eskobar",title:"On a Train",price:0.04})
     record5 = new Record({name:"Sohn",title:"Tremors",price:0.04})
     // console.log(recordstore1.records);
-    var delivery = [record2,record3,record4,record5]
+    var delivery = [record2,record3,record4]
     for (var record in delivery) {
      recordstore1.addRecord(delivery[record]);
+    //  console.log(recordstore1.getvalue());
    };
    });
 
@@ -36,22 +37,26 @@ var Record = require('../record');
       assert.equal("Liverpool", recordstore1.getcity());
    })
    it('it should have a stock cash value of £0 without some records', function () {
-      assert.equal(0, recordstore1.getvalue());
+     recordstore2 = new RecordStore("Rough Trade","Manchester")
+
+      assert.equal(0, recordstore2.getvalue());
    })
-   it('should be able to add records', function(){
+   it('should be able to add a record', function(){
     //  var store = new RecordStore();
     //  var account = new Account({owner:'Jay',amount:50, type:'buisness'});
     //  var record3 = new Record("Nick Drake","River Man",0.02)
     //  var record4 = new Record("Eskobar","On a Train",0.04)
 
-     recordstore1.addRecord(record3);
+     recordstore1.addRecord(record4);
     //  console.log(recordstore1.records);
-      assert.deepEqual(record3, recordstore1.records[1]);
+      assert.deepEqual(record4, recordstore1.records[3]);
+      assert.equal(55.1,recordstore1.getvalue())
+
    });
    it('it should have an inventory with some records', function () {
 
 
-      assert.equal(4, recordstore1.storeStock());
+      assert.equal(3, recordstore1.storeStock());
    });
    it('should have a method that lists the inventory.', function(){
      var stockstring = recordstore1.inventory()

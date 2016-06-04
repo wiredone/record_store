@@ -22,6 +22,9 @@ var RecordStore = function(name,city){
 RecordStore.prototype = {
   addRecord: function(record){
     this.records.push(record);
+    this.value += record.getprice()
+    // console.log(record.getprice());
+    // console.log(this.value);
   },
   // findAccountByOwnerName:function(ownerName){
   //   return _.find(this.accounts, function(account){
