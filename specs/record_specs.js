@@ -1,4 +1,3 @@
-// Create a constructor to create Record objects with artist, title, price
 var assert = require('chai').assert;
 var Record = require('../record');
 
