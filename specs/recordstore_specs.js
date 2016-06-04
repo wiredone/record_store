@@ -18,7 +18,15 @@ var Record = require('../record');
    beforeEach(function(){
      recordstore1 = new RecordStore("Rough Trade","Liverpool")
     //  recordstore2 = new Record("Eskobar","On a Train",0.04)
+    record2 = new Record({name:"Blondie",title:"Parallel Lines",price:55})
+    record3 = new Record({name:"Nick Drake",title:"River Man",price:0.02})
+    record4 = new Record({name:"Eskobar",title:"On a Train",price:0.04})
+    record5 = new Record({name:"Sohn",title:"Tremors",price:0.04})
     // console.log(recordstore1.records);
+    var delivery = [record2,record3,record4,record5]
+    for (var record in delivery) {
+     recordstore1.addRecord(delivery[record]);
+   };
    });
 
    it('it should have a name', function () {
@@ -33,21 +41,21 @@ var Record = require('../record');
    it('should be able to add records', function(){
     //  var store = new RecordStore();
     //  var account = new Account({owner:'Jay',amount:50, type:'buisness'});
-     var record3 = new Record("Nick Drake","River Man",0.02)
-     var record4 = new Record("Eskobar","On a Train",0.04)
+    //  var record3 = new Record("Nick Drake","River Man",0.02)
+    //  var record4 = new Record("Eskobar","On a Train",0.04)
 
      recordstore1.addRecord(record3);
     //  console.log(recordstore1.records);
-      assert.deepEqual(record3, recordstore1.records[0]);
+      assert.deepEqual(record3, recordstore1.records[1]);
    });
    it('it should have an inventory with some records', function () {
-    var record3 = new Record("Nick Drake","River Man",0.02)
-    var record4 = new Record("Eskobar","On a Train",0.04)
-    var record5 = new Record("SOHN","Temple",0.04)
-    var delivery = [record3,record4,record5]
-    for (var record in delivery) {
-     recordstore1.addRecord(record);
-   };
-      assert.equal(3, recordstore1.storeStock());
+
+
+      assert.equal(4, recordstore1.storeStock());
+   });
+   it('should have a method that lists the inventory.', function(){
+     var stockstring = recordstore1.inventory()
+     console.log(stockstring);
+     assert.equal("-----* Rough Trade\'s Stock: *-----\nitem(0) Blondie: Parallel Lines\nitem(1) Nick Drake: River Man\nitem(2) Eskobar: On a Train\nitem(3) Sohn: Tremors", stockstring)
    })
 })
