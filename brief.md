@@ -8,10 +8,10 @@ Learning Objectives
 
 Requirements
 
-    Create a constructor to create Record objects with artist, title, price
-    Create some new records
-    Create a RecordStore that has a name, city and multiple records in it's inventory
-    Give the RecordStore a balance i.e. cash in bank.
+  X  Create a constructor to create Record objects with artist, title, price
+  X  Create some new records
+  X  Create a RecordStore that has a name, city and multiple records in it's inventory
+  X  Give the RecordStore a balance i.e. cash in bank.
     Add some records to your RecordStore.
     Create a method that lists the inventory.
     Create a method so that the RecordStore can sell a record. Adjust the cash in bank to take into account the price of the record sold

@@ -4,6 +4,7 @@ var RecordStore = function(name,city){
   this.name = name;
   this.city = city;
   this.value = 0;
+  this.records =new Array();
   this.getartist = function(){
     return this.artist;
   };
@@ -19,7 +20,7 @@ var RecordStore = function(name,city){
 }
 
 RecordStore.prototype = {
-  addARecord: function(record){
+  addRecord: function(record){
     this.records.push(record);
   },
   // findAccountByOwnerName:function(ownerName){

@@ -7,7 +7,7 @@ var Record = require('../record');
  describe('Record', function() {
 
    beforeEach(function(){
-     record1 = new Record("Nick Drake","River Man",0.02)
+     record1 = new Record({name:"Nick Drake",title:"River Man",price:0.02})
      record2 = new Record("Eskobar","On a Train",0.04)
    });
 
